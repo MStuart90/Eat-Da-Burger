@@ -1,0 +1,28 @@
+{
+  "name": "eat-da-burger",
+  "version": "1.0.0",
+  "description": "This burger logger app uses MySQL, Node, Express, Handlebars, and a homemade ORM (yum!). This app follows the MVC design pattern. Eat-Da-Burger uses Node and MySQL to query and route data and uses Handlebars to generate the HTML.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MStuart90/Eat-Da-Burger.git"
+  },
+  "keywords": [
+    "Eat-Da-Burger"
+  ],
+  "author": "Melanie Stuart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MStuart90/Eat-Da-Burger/issues"
+  },
+  "homepage": "https://github.com/MStuart90/Eat-Da-Burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1"
+  }
+}
