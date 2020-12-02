@@ -1,4 +1,11 @@
+
+DROP DATABASE IF EXISTS burgers_db;
+CREATE DATABASE burgers_db;
+
 USE burgers_db;
 
-INSERT INTO burgers (burger_names)
-Values ("The crabby patty"), ("The Melanie burger"), ("The Angry dragon");
+CREATE TABLE burgers(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    burger_name VARCHAR(30) NOT NULL,
+    devoured BOOLEAN NOT NULL DEFAULT false
+);
