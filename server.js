@@ -1,24 +1,27 @@
-var mysql = require("mysql");
-// var inquirer = require("inquirer");
+const express = require("express");
+var exphbs  = require('express-handlebars');
 
-// create the connection information for the sql database
-var connection = mysql.createConnection({
-  host: "localhost",
+var PORT = process.env.PORT || 8080;
+var app = express();
 
-  // Your port; if not 3306
-  port: 3306,
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
 
-  // Your username
-  user: "root",
+// The express.urlencoded() function is a built-in middleware function in Express. It parses incoming requests with urlencoded payloads and is based on body-parser.
+app.use(express.urlencoded({ extended: true }));
 
-  // Your password
-  password: "Root",
-  database: "burgers_db"
+app.use(express.json());
+
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+var routes = require("./controllers/burgers_controller.js");
+
+app.use(routes);
+
+app.listen(PORT, function () {
+	console.log("Server Listening on: http://localhost:" + PORT);
 });
 
-// connect to the mysql server and sql database
-connection.connect(function(err) {
-  if (err) throw err;
-  // run the start function after the connection is made to prompt the user
-  start();
-});
