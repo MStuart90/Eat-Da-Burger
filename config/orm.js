@@ -18,44 +18,44 @@ var orm = {
         var queryString = "SELECT * FROM " + tableInput + ";";
         // Perform the database query
 		connection.query(queryString, [tableInput], function (err, result) {
-			if (err) {
-				throw err;
-            }
+			// if (err) {
+			// 	throw err;
+            // }
             // Return results in callback
 			cb(result);
 		});
     },
     // Function that insert a single table entry
-	insertOne: function (tableInput, colInput, values, cb) {
-		var queryString = "INSERT INTO " + table;
-		connection.query(
-			queryString,
-			[tableInput, colInput, values],
-			function (err, result) {
-				if (err) {
-					throw err;
-                }
-                // Return results in callback
-				cb(result);
-			}
-		);
-    },
+	// insertOne: function (tableInput, colInput, values, cb) {
+	// 	var queryString = "INSERT INTO " + table;
+	// 	connection.query(
+	// 		queryString,
+	// 		[tableInput, colInput, values],
+	// 		function (err, result) {
+	// 			if (err) {
+	// 				throw err;
+    //             }
+    //             // Return results in callback
+	// 			cb(result);
+	// 		}
+	// 	);
+    // },
     
-	// Function that updates a single table entry
-	updateOne: function (tableInput, colToUpdate, valToUpdate, id, cb) {
-		var queryString = "UPDATE " + table;
-		connection.query(
-			queryString,
-			[tableInput, colToUpdate, valToUpdate, id],
-			function (err, result) {
-				if (err) {
-					throw err;
-                }
-                // Return results in callback
-				cb(result);
-			}
-		);
-	},
+	// // Function that updates a single table entry
+	// updateOne: function (tableInput, colToUpdate, valToUpdate, id, cb) {
+	// 	var queryString = "UPDATE " + table;
+	// 	connection.query(
+	// 		queryString,
+	// 		[tableInput, colToUpdate, valToUpdate, id],
+	// 		function (err, result) {
+	// 			if (err) {
+	// 				throw err;
+    //             }
+    //             // Return results in callback
+	// 			cb(result);
+	// 		}
+	// 	);
+	// },
 };
 
 // * Export the ORM object in `module.exports`.
