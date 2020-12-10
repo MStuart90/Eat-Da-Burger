@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 
-var connection;
+var connection = ""
 
 // JawsDB is an add-on for providing a fully functional MySQL Database server for use with your Heroku application
 // The JAWSDB_URL config variable will contain a placeholder until the database is ready.
